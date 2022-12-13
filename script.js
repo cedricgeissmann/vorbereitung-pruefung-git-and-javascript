@@ -1,7 +1,12 @@
 const circle = document.querySelector("#circ")
 let dy = 0
+let dx = 0
+
 
 function start() {
+
+    dx=1
+
     window.requestAnimationFrame(update)
 }
 
@@ -18,6 +23,25 @@ function update() {
 
 cy = cy + dy
 circle.setAttribute("cy" , cy)  
+
+
+
+//seitwärts Bewegung
+let cx = parseFloat (circle.getAttribute("cx"))
+
+if (cX > 100) {
+    dx = dx * (-1)
+
+}else if (cx < 0) {
+   dx = dx * (-1) 
+}
+
+
+cx = cx + dx
+circle.setAttribute("cx" , cy) 
+
+
+
 
     window.requestAnimationFrame(update)
 }
